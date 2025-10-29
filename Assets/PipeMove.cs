@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class PipeMove : MonoBehaviour
 {
+
+
+
+    public float moveSpeed = 3;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +16,6 @@ public class PipeMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = transform.position + (Vector3.left * moveSpeed);
     }
 }
