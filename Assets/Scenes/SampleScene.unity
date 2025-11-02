@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 2099124763}
   - component: {fileID: 2099124764}
   - component: {fileID: 2099124765}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Birdinyo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
