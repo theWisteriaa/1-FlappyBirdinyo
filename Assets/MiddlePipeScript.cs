@@ -24,7 +24,7 @@ public class MiddlePipeScript : MonoBehaviour
 
 
         {
-            logic.addScore(2);
+            logic.addScore(1);
             Debug.Log("Score Increased");
         }
     }
