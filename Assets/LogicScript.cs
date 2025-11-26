@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;
     public Text scoreText;
+    public GameObject gameOverScreen;
 
     private Vector3 originalPos;
     private Vector3 originalScale;
@@ -55,7 +58,24 @@ public class LogicScript : MonoBehaviour
         // Pozisyon ve ölçek sýfýrla
         rect.localPosition = originalPos;
         rect.localScale = originalScale;
+
     }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+    }
+
+    public void gameOver()
+    {
+        gameOverScreen.SetActive(true);
+        FindFirstObjectByType<PipeSpawn>().StopSpawning();
+
+
+    }
+
 
 
 
