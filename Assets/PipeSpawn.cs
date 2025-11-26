@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
+using System.Collections;
 
 public class PipeSpawn : MonoBehaviour
 {
@@ -40,6 +41,16 @@ public class PipeSpawn : MonoBehaviour
 
     public void StopSpawning()
     {
+        spawnAllowed = false;
+    }
+    public void StopSpawningDelayed(float delay)
+    {
+        StartCoroutine(StopAfterDelay(delay));
+    }
+
+    IEnumerator StopAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         spawnAllowed = false;
     }
 }

@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 
 public class LogicScript : MonoBehaviour
+
 {
+    
     public int playerScore;
     public Text scoreText;
     public GameObject gameOverScreen;
@@ -71,6 +73,7 @@ public class LogicScript : MonoBehaviour
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
+        
         FindFirstObjectByType<PipeSpawn>().StopSpawning();
 
 

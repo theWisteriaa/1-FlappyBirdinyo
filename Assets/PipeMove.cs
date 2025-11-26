@@ -20,7 +20,9 @@ public class PipeMove : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
+     
         if (isSlowingDown)
         {
             moveSpeed = Mathf.Lerp(moveSpeed, 0f, Time.deltaTime / slowDuration);

@@ -30,13 +30,26 @@ public class BirdinyoScript : MonoBehaviour
     {
         logic.gameOver();
         birdIsAlive = false;
-        PipeMove[] pipes = FindObjectsOfType<PipeMove>();
+        PipeMove[] pipes = Object.FindObjectsByType<PipeMove>(FindObjectsSortMode.None);
+
 
         foreach (PipeMove pipe in pipes)
         {
             pipe.SlowDown();
         }
+
+        PipeSpawn spawnPipe = FindAnyObjectByType<PipeSpawn>();
+
+        if (spawnPipe != null)
+        {
+            // Boruların 0.5 saniye (yarım saniye) daha spawnlanmasına izin ver
+            // Gecikme süresini ihtiyacınıza göre ayarlayabilirsiniz.
+            spawnPipe.StopSpawningDelayed(2f);
+            Debug.Log("Spawner 2 saniye sonra durdurulacak.");
+        }
     }
+
+        
 }
 
 
