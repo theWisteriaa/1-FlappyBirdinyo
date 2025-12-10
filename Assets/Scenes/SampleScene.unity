@@ -198,6 +198,7 @@ MonoBehaviour:
   pipe: {fileID: 4243381197765372561, guid: ae1c93dfe7569b9408b7d05fe901755a, type: 3}
   spawnRate: 2
   heightOffSet: 7
+  spawnAllowed: 1
 --- !u!4 &187180870
 Transform:
   m_ObjectHideFlags: 0
@@ -373,7 +374,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.16794232, g: 0.6981132, b: 0.6981131, a: 0}
+  m_BackGroundColor: {r: 0.26312745, g: 0.6907199, b: 0.764151, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
