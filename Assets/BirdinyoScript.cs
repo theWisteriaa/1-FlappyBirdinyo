@@ -10,6 +10,28 @@ public class BirdinyoScript : MonoBehaviour
     public bool birdIsAlive = true;
 
     // Yeni sistem, bir "action" tetiklendiğinde çağrılan bir metot kullanır
+
+    void Update()
+    {
+        // Kuş çok aşağı düşerse ölmesi için bir limit belirle
+        if (transform.position.y < -12f && birdIsAlive)
+        {
+            birdIsAlive = false;
+            logic.gameOver();
+
+            // Boruları durdur
+            PipeMove[] pipes = Object.FindObjectsByType<PipeMove>(FindObjectsSortMode.None);
+            foreach (PipeMove pipe in pipes)
+                pipe.SlowDown();
+
+            // Spawner'ı durdur
+            PipeSpawn spawnPipe = FindAnyObjectByType<PipeSpawn>();
+            if (spawnPipe != null)
+                spawnPipe.StopSpawningDelayed(2f);
+
+            Debug.Log("Bird fell off.");
+        }
+    }
     public void OnJump(InputValue value)
     
    

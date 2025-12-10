@@ -1,7 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 
 
@@ -15,6 +17,8 @@ public class LogicScript : MonoBehaviour
 
     private Vector3 originalPos;
     private Vector3 originalScale;
+    public AudioSource audioSource;   // SFX için AudioSource
+    public AudioClip scoreSFX;        // Skor sesi
 
 
 
@@ -24,6 +28,11 @@ public class LogicScript : MonoBehaviour
         playerScore = playerScore + scoreToAdd;
             
         scoreText.text = playerScore.ToString();
+
+        audioSource.PlayOneShot(scoreSFX);
+
+        // Animasyon
+       
 
         StartCoroutine(ScoreTextEffect());
     }
